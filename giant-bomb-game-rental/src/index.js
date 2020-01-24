@@ -9,21 +9,12 @@ import createSagaMiddleware from 'redux-saga';
 import { put, takeEvery } from 'redux-saga/effects';
 import axios from 'axios';
 
+// root saga
 function* rootSaga() {
     yield takeEvery('SEARCH_GAMES', searchGames);
 }
 
-// Saga
-// function* getBombSaga( action ) {
-//     try {
-//         const getResponse = yield axios.get('/api/bomb');
-//         yield put({ type: 'SET_BOMB', payload: getResponse.data });
-//     }
-//     catch (error) {
-//         console.log('error with bomb get request', error);
-//     }
-// }
-
+// saga to search 
 function * searchGames (action) {
     try{
       console.log('ACTION PAYLOAD-->',action.payload);
@@ -37,16 +28,7 @@ function * searchGames (action) {
 
 const sagaMiddleware = createSagaMiddleware();
 
-// Reducer that holds our results
-// const bomb = (state = {}, action) => {
-//     if(action.type === 'SET_BOMB') {
-//         console.log('in bomb reducer', action.payload);
-        
-//         return action.payload;
-//     }
-//     return state;
-// }
-
+// reducer to search 
 const searchReducer = (state=[], action) => {
     if(action.type === 'GET_SEARCH'){
       return action.payload;
@@ -54,7 +36,7 @@ const searchReducer = (state=[], action) => {
     return state;
   }
 
-// Create one store that all components can use
+// one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         searchReducer,
@@ -62,8 +44,8 @@ const storeInstance = createStore(
     applyMiddleware(sagaMiddleware, logger),
 );
 
-sagaMiddleware.run(rootSaga);
 
+sagaMiddleware.run(rootSaga);
 
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
     document.getElementById('root'));

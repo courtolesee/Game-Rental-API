@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // Route includes
-const rentRouter = require('./routes/rent.router');
+// const rentRouter = require('./routes/rent.router');
 const giantBomb = require('./routes/giantBomb.router');
 
 // Body parser middleware
