@@ -35,8 +35,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-        <h1>Gravie Software Engineer Challenge</h1>
-          <p>Giant Bomb API</p>
+        {/* <h1>Gravie Software Engineer Challenge</h1>
+          <p>Giant Bomb API</p> */}
         </header>
         <br/>
         <input placeholder="search" type="text" onChange={(event)=>this.handleChange(event, 'search')} value={this.state.search}/>
