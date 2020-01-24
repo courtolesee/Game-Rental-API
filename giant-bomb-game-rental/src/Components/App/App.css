@@ -20,3 +20,15 @@ p {
 .App-link {
   color: #61dafb;
 }
+
+.gameCard {
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 15px;
+}
+
+.gameSection {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+}

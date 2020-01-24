@@ -17,7 +17,6 @@ function* rootSaga() {
 // saga to search 
 function * searchGames (action) {
     try{
-      console.log('ACTION PAYLOAD-->',action.payload);
       const getSearchResponse = yield axios.get(`/api/bomb/${action.payload}`);
       yield put ({ type: 'GET_SEARCH', payload: getSearchResponse.data})
     }
