@@ -4,11 +4,18 @@ const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
 
-router.get('/', (req, res) => {
+router.get('/:searchQuery', (req, res) => {
     let apiKey = process.env.API_KEY;
-    axios.get(`http://api.giphy.com/v1/gifs/random?api_key=${apiKey}`)
+    console.log('searching:', req.params.searchQuery);
+    axios.get(`https://www.giantbomb.com/api/search/?api_key=${apiKey}&format=json&query=${req.params.searchQuery}&resources=game&limit=1`)
         .then( response => {
+            // searchResults = [];
+            //     for (let game of response.data.data) {
+            //     searchResults.push({image_url: item.images.original.url, title: item.title})
+            //     }
             res.send( response.data.data );
+            console.log('response is:', response.data);
+            
         })
         .catch(error=>{
             console.log('error getting Giant Bomb data:', error);
@@ -17,3 +24,4 @@ router.get('/', (req, res) => {
 })
 
 module.exports = router;
+

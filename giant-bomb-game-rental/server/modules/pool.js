@@ -4,7 +4,7 @@ const url = require('url');
 let config = {};
 
 if (process.env.DATABASE_URL) {
-    
+
   const params = url.parse(process.env.DATABASE_URL);
   const auth = params.auth.split(':');
 
@@ -22,7 +22,7 @@ if (process.env.DATABASE_URL) {
   config = {
     host: 'localhost', 
     port: 5432,
-    database: 'giphy_search_favorites', 
+    database: '', 
     max: 10, 
     idleTimeoutMillis: 30000, 
   };
