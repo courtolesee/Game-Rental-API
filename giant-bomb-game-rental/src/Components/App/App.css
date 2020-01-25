@@ -17,6 +17,10 @@ p {
   margin: 0%;
 }
 
+h3 {
+  margin-bottom: 0px;
+}
+
 .search {
   background-color: rgb(123, 135, 156);
   padding: 5px;

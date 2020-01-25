@@ -23,6 +23,7 @@ const styles = {
 
 class GameCard extends Component {
 
+  // on click function to dispatch (to the root saga listening for it) the payload (name and image of game clicked)
   rentGame = () => {
     let rental = {
       image: this.props.item.image,
@@ -31,6 +32,7 @@ class GameCard extends Component {
     this.props.dispatch({ type: 'RENT_GAME', payload: rental })
   }
 
+  // renders each Game Card from the search result 
   render () {
 
     const { classes } = this.props;

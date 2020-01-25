@@ -3,6 +3,7 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
+// rent router posts to database 
 router.post('/', (req, res) => {
   console.log(req.body);
   const {name, image} = req.body;

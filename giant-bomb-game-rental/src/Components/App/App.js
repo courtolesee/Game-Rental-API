@@ -13,9 +13,6 @@ const styles = theme => ({
   button: {
     margin: theme.spacing(),
   },
-  // input: {
-  //   display: 'none',
-  // },
   textField: {
     marginLeft: theme.spacing(),
     marginRight: theme.spacing(),
