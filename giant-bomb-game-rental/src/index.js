@@ -12,6 +12,7 @@ import axios from 'axios';
 // root saga
 function* rootSaga() {
     yield takeEvery('SEARCH_GAMES', searchGames);
+    yield takeEvery('RENT_GAME', rentGame);
 }
 
 // saga to search 
@@ -23,7 +24,18 @@ function * searchGames (action) {
     catch (error){
       console.log('error getting search:', error);
     }
-  }
+}
+
+// saga to rent 
+function * rentGame (action) {
+    try {
+        yield axios.post('/api/rent', action.payload);
+    }
+    catch (error) {
+        console.log('error renting game:', error);
+    }
+}
+
 
 const sagaMiddleware = createSagaMiddleware();
 

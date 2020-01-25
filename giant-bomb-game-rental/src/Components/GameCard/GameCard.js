@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux';
 // Material UI Imports
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -9,7 +10,6 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-
 
 
 const styles = {
@@ -23,14 +23,20 @@ const styles = {
 
 class GameCard extends Component {
 
+  rentGame = () => {
+    let rental = {
+      image: this.props.item.image,
+      name: this.props.item.name
+    }
+    this.props.dispatch({ type: 'RENT_GAME', payload: rental })
+  }
+
   render () {
 
     const { classes } = this.props;
 
     return (
       <div className="gameCard">
-         {/* <img src={this.props.item.image} alt={this.props.item.name}/>
-         <p>{this.props.item.name}</p> */}
          <Card className={classes.card}>
           <CardActionArea>
             <CardMedia
@@ -45,7 +51,8 @@ class GameCard extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary">
+            <Button size="small" color="primary"
+            onClick={this.rentGame}>
               Rent
             </Button>
           </CardActions>
@@ -60,7 +67,7 @@ GameCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(GameCard);
+export default connect()(withStyles(styles)(GameCard));
 
 
 

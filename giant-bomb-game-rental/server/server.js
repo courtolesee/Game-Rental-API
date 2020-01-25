@@ -3,7 +3,7 @@ const app = express();
 const bodyParser = require('body-parser');
 
 // Route includes
-// const rentRouter = require('./routes/rent.router');
+const rentRouter = require('./routes/rent.router');
 const giantBomb = require('./routes/giantBomb.router');
 
 // Body parser middleware
@@ -15,7 +15,7 @@ app.use(express.static('build'));
 
 /* Routes */
 app.use('/api/bomb', giantBomb)
-// app.use('/api/rent', rentRouter);
+app.use('/api/rent', rentRouter);
 
 // App Set //
 const PORT = process.env.PORT || 5000;

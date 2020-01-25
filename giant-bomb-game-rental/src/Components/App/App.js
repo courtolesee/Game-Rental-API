@@ -64,7 +64,7 @@ class App extends Component {
         </header>
 
         <div className="search">
-          <h3>Search for your favorite games to rent!</h3>
+          <h3>Search for games to rent!</h3>
             <TextField
               id="outlined-name"
               label="Game Keywords"
