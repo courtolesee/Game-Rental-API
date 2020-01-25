@@ -17,8 +17,10 @@ p {
   margin: 0%;
 }
 
-.App-link {
-  color: #61dafb;
+.search {
+  background-color: rgb(123, 135, 156);
+  padding: 5px;
+  margin-bottom: 2px;
 }
 
 .gameCard {
