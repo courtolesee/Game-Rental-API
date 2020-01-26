@@ -21,6 +21,11 @@ h3 {
   margin-bottom: 0px;
 }
 
+.checkoutBtn {
+  justify-content: right;
+  background-color: #39465A;
+}
+
 .search {
   background-color: rgb(123, 135, 156);
   padding: 5px;

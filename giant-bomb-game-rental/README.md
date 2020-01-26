@@ -20,6 +20,8 @@ go to http://localhost:3000/#/
 
 
 ## What Else I Could Have Done
-1. Have a route to grab random games for suggested rent so the user doesn't have to search for specific keywords or games to start viewing games.
+1. Have a component did mount route to grab random games for suggested rent so the user doesn't have to search for specific keywords or games to start viewing games.
 
 2. Upon clicking 'rent' on a game card, the rent button could have been conditionally rendered to change to a button that removes the game from rented games. 
+
+3. Had I included any more in the search functionality, I would have certainly pulled that into it's own componenet to clean up the code. 

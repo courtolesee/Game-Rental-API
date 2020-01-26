@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './App.css';
-import GameCard from '../GameCard/GameCard';
+import Results from '../Results/Results';
 // Material UI Imports
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -47,6 +47,9 @@ class App extends Component {
     });
   }
 
+  goToCheckout = () => {
+    this.props.dispatch({type: 'FETCH_RENTALS'});
+  }
 
   // renders App
   render() {
@@ -57,9 +60,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1>Gravie Software Engineer Challenge</h1>
-            <p>Giant Bomb API</p>
+            <p>Giant Bomb API Game Rental</p>
         </header>
-
         <div className="search">
           <h3>Search for games to rent!</h3>
             <TextField
@@ -76,18 +78,19 @@ class App extends Component {
               className={classes.button}
               onClick={this.performSearch}>
                 Search
+            </Button><br/>
+            <Button 
+              variant="contained" 
+              className={classes.button}
+              onClick={this.goToCheckout}>
+              Ready to Checkout?
             </Button>
         </div>
 
         <div>
           <p>Showing results for: {this.state.lastSearch}</p><br/>
-        </div>
-        
-        <div className="gameSection">
-          {this.props.game.map( (item,i)=> {     
-            return <GameCard key={i} item={item} />
-          })}
-        </div>
+        </div>{JSON.stringify(this.props.rental)}
+        <Results />
       </div>
     );
   }
@@ -98,5 +101,4 @@ App.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default connect(reduxState=>({game: reduxState.searchReducer}))(withStyles(styles)(App));
-
+export default connect((reduxState=>({rental: reduxState.rentalsReducer})))(withStyles(styles)(App));

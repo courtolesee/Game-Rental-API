@@ -13,6 +13,7 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('SEARCH_GAMES', searchGames);
     yield takeEvery('RENT_GAME', rentGame);
+    yield takeEvery('FETCH_RENTALS', fetchRentalList)
 }
 
 // saga to search 
@@ -36,6 +37,20 @@ function * rentGame (action) {
     }
 }
 
+// saga to get rental list
+function * fetchRentalList () {
+  try {
+    const response = yield axios.get('api/rent/list');
+    yield put({ type: 'SET_RENTALS', payload: response.data });
+  } 
+  catch (error) {
+    console.log('error getting rentals:', error);
+  }
+}
+
+
+
+
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -47,10 +62,22 @@ const searchReducer = (state=[], action) => {
     return state;
   }
 
+// reducer to hold rentals
+const rentalsReducer = (state=[], action) => {
+  switch (action.type) {
+    case 'SET_RENTALS': 
+    console.log('rentals reducer aciton.payload is: ', action.payload);
+      return action.payload
+    default: 
+      return state;
+  }
+}
+
 // one store that all components can use
 const storeInstance = createStore(
     combineReducers({
         searchReducer,
+        rentalsReducer
     }),
     applyMiddleware(sagaMiddleware, logger),
 );
