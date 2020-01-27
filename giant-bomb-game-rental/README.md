@@ -1,7 +1,10 @@
 # Gravie Software Engineer Challenge
 Courtney Olesee's Giant Bomb API - Game Rental
 
+- home page after search
 ![Search Image](search.png)
+
+- checkout page 
 ![Checkout Image](checkout.png)
 
 ## Installation
