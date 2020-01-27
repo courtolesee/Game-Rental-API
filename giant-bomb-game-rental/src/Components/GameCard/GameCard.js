@@ -32,14 +32,16 @@ class GameCard extends Component {
     this.props.dispatch({ type: 'RENT_GAME', payload: rental })
   }
 
-  delete = () => {
+  deleteRental = () => {
     this.props.dispatch({ type: 'DELETE_RENTAL', payload: this.props.item.id})
   }
 
   renderCardBtn = ()=> {
     switch(this.props.page) {
-      case 'search': return <button onClick={this.rentGame}>Rent</button>;
-      case 'rent': return <button onClick={this.delete}>Delete</button>
+      case 'search': 
+        return <Button variant="contained" onClick={this.rentGame}>Rent</Button>;
+      case 'rent': 
+        return <Button variant="contained" style={{color: "red"}} onClick={this.deleteRental}>Delete</Button>
     }
   }
 

@@ -22,4 +22,4 @@ go to http://localhost:3000/#/
 ## What Else I Could Have Done
 1. Have a component did mount route to grab random games for suggested rent so the user doesn't have to search for specific keywords or games to start viewing games.
 
-2. Upon clicking 'rent' on a game card, the rent button could have been conditionally rendered to change to a button that removes the game from rented games (in both the search and the checkout components). 
+2. A 'Complete Checkout' button on the Checkout page to clear the rentals. 
