@@ -9,6 +9,18 @@
   margin-top: 0px;
 }
 
+.Checkout-header {
+  background-color: #39465A;
+  display: flex;
+  flex-direction: center;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  color: white;
+  margin-top: 0px;
+  padding: 15px;
+}
+
 .title {
   display: flex;
   align-items: center;

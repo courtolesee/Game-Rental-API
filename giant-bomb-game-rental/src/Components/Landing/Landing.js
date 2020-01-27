@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Search from '../Search/Search';
-import CheckOut from '../CheckOut/CheckOut';
 import Logo from './logo.png'
 
 // Material UI Imports
@@ -43,7 +42,6 @@ class Landing extends Component {
             <h1> Software Engineer Challenge</h1>
           </div>
         </header>
-        <CheckOut />
         <Search />
       </div>
     );
