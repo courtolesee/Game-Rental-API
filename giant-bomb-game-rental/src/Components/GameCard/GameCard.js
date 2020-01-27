@@ -11,7 +11,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
-
+// Material UI styles
 const styles = {
   card: {
     maxWidth: 345,
@@ -63,7 +63,6 @@ class GameCard extends Component {
     )
   }
 }
-
 
 GameCard.propTypes = {
   classes: PropTypes.object.isRequired,

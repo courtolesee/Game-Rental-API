@@ -27,13 +27,13 @@ function * searchGames (action) {
     }
 }
 
-// saga to rent 
+// saga to rent (puts game in database)
 function * rentGame (action) {
     try {
-        yield axios.post('/api/rent', action.payload);
+      yield axios.post('/api/rent', action.payload);
     }
     catch (error) {
-        console.log('error renting game:', error);
+      console.log('error renting game:', error);
     }
 }
 
@@ -48,13 +48,9 @@ function * fetchRentalList () {
   }
 }
 
-
-
-
-
 const sagaMiddleware = createSagaMiddleware();
 
-// reducer to search 
+// reducer to search (holds search results)
 const searchReducer = (state=[], action) => {
     if(action.type === 'GET_SEARCH'){
       return action.payload;
@@ -62,11 +58,10 @@ const searchReducer = (state=[], action) => {
     return state;
   }
 
-// reducer to hold rentals
+// reducer to hold rentals - (with a switch case rather than if statements likea above)
 const rentalsReducer = (state=[], action) => {
   switch (action.type) {
     case 'SET_RENTALS': 
-    console.log('rentals reducer aciton.payload is: ', action.payload);
       return action.payload
     default: 
       return state;

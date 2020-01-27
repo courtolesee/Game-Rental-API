@@ -20,7 +20,7 @@ const styles = theme => ({
 
 class Search extends Component {
 
-  // changes with user input
+  // changes with user input (search is current, lastSearch holds previous search)
   state = {
     search: '',
     lastSearch: ''
@@ -46,11 +46,12 @@ class Search extends Component {
     });
   }
 
+  // brings user to checkout page, which holds results of the rentals reducer 
   goToCheckout = () => {
     this.history.push('/checkout')
   }
 
-  // renders App
+  // renders Search
   render() {
 
     const { classes } = this.props;
@@ -86,7 +87,6 @@ class Search extends Component {
     );
   }
 }
-
 
 Search.propTypes = {
   classes: PropTypes.object.isRequired,

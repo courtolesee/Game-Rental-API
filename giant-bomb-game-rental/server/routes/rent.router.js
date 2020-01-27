@@ -3,7 +3,7 @@ const pool = require('../modules/pool');
 
 const router = express.Router();
 
-// rent router posts to database 
+// rent router posts to database upon user clicking rent on game card
 router.post('/', (req, res) => {
   console.log(req.body);
   const {name, image} = req.body;
@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
   })
 });
 
-
+// get the list of rented games
 router.get('/list', (req, res) => {
   const queryText = `SELECT * from "rental" ORDER BY "name" ASC;`;
   pool.query(queryText)

@@ -4,7 +4,7 @@ const axios = require('axios');
 const dotenv = require('dotenv');
 dotenv.config();
 
-// search router get
+// search router get search query from Giant Bomb games API
 router.get('/:searchQuery', (req, res) => {
     let apiKey = process.env.API_KEY;
     axios.get(`https://www.giantbomb.com/api/search/?api_key=${apiKey}&format=json&query=${req.params.searchQuery}&resources=game`)

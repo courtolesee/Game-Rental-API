@@ -5,7 +5,7 @@ import GameCard from '../GameCard/GameCard';
 
 class Results extends Component {
 
-  // renders App
+  // renders results of search (mapps through the game reducer which holds the results of the search query)
   render() {
 
     return (
@@ -17,6 +17,5 @@ class Results extends Component {
     );
   }
 }
-
 
 export default connect(reduxState=>({game: reduxState.searchReducer}))(Results);
