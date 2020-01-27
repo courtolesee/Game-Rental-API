@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
   console.log(req.body);
   const {name, image} = req.body;
-  const queryString = `INSERT INTO "rental" ("name", "image_url") VALUES ($1, $2);`;
+  const queryString = `INSERT INTO "rental" ("name", "image") VALUES ($1, $2);`;
   pool.query(queryString, [name, image]).then(result=>{
     console.log('ADD RESULT',result);
     res.sendStatus(200);
