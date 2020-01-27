@@ -1,4 +1,4 @@
-## *!* Please see my README within giant-bomb-game-rental 
+## *ATTENTION: Please see my README within giant-bomb-game-rental!*
 # Gravie Software Engineer Challenge
 
 ## Instructions
