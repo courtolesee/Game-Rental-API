@@ -30,6 +30,7 @@ router.get('/list', (req, res) => {
       });
 });
 
+// delete indivudal rental items
 router.delete('/delete/:id', (req, res) => {
     let id = [req.params.id]
     let queryText = `DELETE FROM "rental" WHERE id = $1;`;

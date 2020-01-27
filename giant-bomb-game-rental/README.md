@@ -23,3 +23,5 @@ go to http://localhost:3000/#/
 1. Have a component did mount route to grab random games for suggested rent so the user doesn't have to search for specific keywords or games to start viewing games.
 
 2. A 'Complete Checkout' button on the Checkout page to clear the rentals. 
+
+3. Cleaner styling - pull out all styling and import in.

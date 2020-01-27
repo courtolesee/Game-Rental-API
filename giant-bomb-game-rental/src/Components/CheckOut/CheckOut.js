@@ -16,6 +16,7 @@ const styles = theme => ({
   }
 });
 
+
 class Checkout extends Component {
 
   // upon checkoutpage load, rentals reducer is mapped through to show all games that have been rented
@@ -58,4 +59,5 @@ Checkout.propTypes = {
   classes: PropTypes.object.isRequired,
 };
    
+
 export default connect((reduxState=>({rental: reduxState.rentalsReducer})))(withStyles(styles)(Checkout));

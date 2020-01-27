@@ -21,6 +21,7 @@ const styles = {
   },
 };
 
+
 class GameCard extends Component {
 
   // on click function to dispatch (to the root saga listening for it) the payload (name and image of game clicked)
@@ -32,10 +33,12 @@ class GameCard extends Component {
     this.props.dispatch({ type: 'RENT_GAME', payload: rental })
   }
 
+  // deletes individual rental cards from checkout (rental reducer and database)
   deleteRental = () => {
     this.props.dispatch({ type: 'DELETE_RENTAL', payload: this.props.item.id})
   }
 
+  // if on search page: button to rent, if rented and on checkout page: delete
   renderCardBtn = ()=> {
     switch(this.props.page) {
       case 'search': 
@@ -77,6 +80,7 @@ class GameCard extends Component {
 GameCard.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
 
 export default connect()(withStyles(styles)(GameCard));
 

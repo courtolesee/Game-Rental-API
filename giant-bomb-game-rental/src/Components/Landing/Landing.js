@@ -14,6 +14,7 @@ const styles = theme => ({
   }
 });
 
+
 class Landing extends Component {
 
     // takes user to checkout page on click of 'Ready to Checkout' button
@@ -46,7 +47,8 @@ class Landing extends Component {
         </div>
         );
     }
-    }
+}
+
 
 export default connect()(withStyles(styles)(Landing));
 

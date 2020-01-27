@@ -18,6 +18,7 @@ const styles = theme => ({
   },
 });
 
+
 class Search extends Component {
 
   // changes with user input (search is current, lastSearch holds previous search)
@@ -91,5 +92,6 @@ class Search extends Component {
 Search.propTypes = {
   classes: PropTypes.object.isRequired,
 };
+
 
 export default connect((reduxState=>({rental: reduxState.rentalsReducer})))(withStyles(styles)(Search));

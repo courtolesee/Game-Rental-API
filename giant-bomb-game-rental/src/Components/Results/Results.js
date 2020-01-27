@@ -18,4 +18,5 @@ class Results extends Component {
   }
 }
 
+
 export default connect(reduxState=>({game: reduxState.searchReducer}))(Results);

@@ -6,6 +6,7 @@ import './App.css';
 import Landing from '../Landing/Landing';
 import CheckOut from '../CheckOut/CheckOut';
 
+
 class App extends Component {
 
   // renders App
@@ -20,5 +21,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;
