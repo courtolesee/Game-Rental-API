@@ -28,6 +28,6 @@ go to http://localhost:3000/#/
 ## What Else I Could Have Done
 1. Have a component did mount route to grab random games for suggested rent so the user doesn't have to search for specific keywords or games to start viewing games.
 
-2. A 'Complete Checkout' button on the Checkout page to clear the rentals. 
+2. A 'Complete Checkout' button on the Checkout page to clear the rentals (could send that to a new table for orders). 
 
-3. Cleaner styling - pull out all styling and import in.
+3. Cleaner styling - pull out all styling of components .js and import in.
