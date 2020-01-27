@@ -30,5 +30,17 @@ router.get('/list', (req, res) => {
       });
 });
 
+router.delete('/delete/:id', (req, res) => {
+    let id = [req.params.id]
+    let queryText = `DELETE FROM "rental" WHERE id = $1;`;
+    pool.query(queryText, id)
+    .then(result => {
+        res.sendStatus(200);        
+    }).catch(error=>{
+        console.log('error deleting rental', error);
+        res.sendStatus(400);
+    })
+})
+
 module.exports = router;
 

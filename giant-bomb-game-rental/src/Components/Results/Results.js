@@ -11,7 +11,7 @@ class Results extends Component {
     return (
         <div className="gameSection">
           {this.props.game.map( (item,i)=> {     
-            return <GameCard key={i} item={item} />
+            return <GameCard key={i} item={item} page='search'/>
           })}
         </div>
     );

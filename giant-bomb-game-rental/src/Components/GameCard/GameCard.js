@@ -32,6 +32,17 @@ class GameCard extends Component {
     this.props.dispatch({ type: 'RENT_GAME', payload: rental })
   }
 
+  delete = () => {
+    this.props.dispatch({ type: 'DELETE_RENTAL', payload: this.props.item.id})
+  }
+
+  renderCardBtn = ()=> {
+    switch(this.props.page) {
+      case 'search': return <button onClick={this.rentGame}>Rent</button>;
+      case 'rent': return <button onClick={this.delete}>Delete</button>
+    }
+  }
+
   // renders each Game Card from the search result 
   render () {
 
@@ -53,10 +64,7 @@ class GameCard extends Component {
             </CardContent>
           </CardActionArea>
           <CardActions>
-            <Button size="small" color="primary"
-            onClick={this.rentGame}>
-              Rent
-            </Button>
+          {this.renderCardBtn()}
           </CardActions>
         </Card>
       </div>

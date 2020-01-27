@@ -46,7 +46,7 @@ class Checkout extends Component {
         </Button>
         <div className="gameSection">
           {this.props.rental.map( (item,i)=> {     
-            return <GameCard key={i} item={item} />
+            return <GameCard key={i} item={item} page='rent'/>
           })}
         </div>
       </div>

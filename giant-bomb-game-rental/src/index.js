@@ -13,7 +13,8 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('SEARCH_GAMES', searchGames);
     yield takeEvery('RENT_GAME', rentGame);
-    yield takeEvery('FETCH_RENTALS', fetchRentalList)
+    yield takeEvery('FETCH_RENTALS', fetchRentalList);
+    yield takeEvery('DELETE_RENTAL', deleteRental)
 }
 
 // saga to search 
@@ -45,6 +46,16 @@ function * fetchRentalList () {
   } 
   catch (error) {
     console.log('error getting rentals:', error);
+  }
+}
+
+function * deleteRental (action) {
+  try {
+    yield axios.delete('/api/rent/delete/'+action.payload);
+    yield put({type: 'FETCH_RENTALS'})
+  }
+  catch (error){
+    console.log('error deleting rental', error);
   }
 }
 
