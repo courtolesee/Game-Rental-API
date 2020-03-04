@@ -1,11 +1,6 @@
-# Gravie Software Engineer Challenge
+# Software Engineer Challenge
 Courtney Olesee's Giant Bomb API - Game Rental
 
-- home page after search
-![Search Image](search.png)
-
-- checkout page 
-![Checkout Image](checkout.png)
 
 ## Installation
 Create a database called "gravie_game_rental" and run the create table query in the database.sql file.
