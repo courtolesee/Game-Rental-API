@@ -1,4 +1,4 @@
-name: gravie_game_rental
+name: game_rental
 
 CREATE TABLE "rental" (
 	"id" SERIAL PRIMARY KEY,

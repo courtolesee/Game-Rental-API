@@ -3,7 +3,7 @@ Courtney Olesee's Giant Bomb API - Game Rental
 
 
 ## Installation
-Create a database called "gravie_game_rental" and run the create table query in the database.sql file.
+Create a database called "game_rental" and run the create table query in the database.sql file.
 
 > npm install 
 
