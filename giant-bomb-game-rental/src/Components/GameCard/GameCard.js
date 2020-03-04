@@ -44,7 +44,9 @@ class GameCard extends Component {
       case 'search': 
         return <Button variant="contained" onClick={this.rentGame}>Rent</Button>;
       case 'rent': 
-        return <Button variant="contained" style={{color: "red"}} onClick={this.deleteRental}>Delete</Button>
+        return <Button variant="contained" style={{color: "red"}} onClick={this.deleteRental}>Delete</Button>;
+      default: 
+        return;
     }
   }
 
