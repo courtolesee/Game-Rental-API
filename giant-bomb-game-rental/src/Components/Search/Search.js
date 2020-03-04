@@ -61,7 +61,6 @@ class Search extends Component {
 
     <div >
           <div className="search">          
-          <p>Giant Bomb API Game Rental</p>
             <h3>Search for games to rent!</h3>
               <TextField
                 id="outlined-name"

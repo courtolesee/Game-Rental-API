@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Search from '../Search/Search';
-import Logo from './logo.png'
 
 // Material UI Imports
 import { withStyles } from '@material-ui/core/styles';
@@ -39,8 +38,7 @@ class Landing extends Component {
                 </div>
             <header className="App-header">
             <div className="title">
-                <img className="logo" src={Logo} alt="Gravie Logo" />
-                <h1> Software Engineer Challenge</h1>
+                <h1>Giant Bomb API Game Rental</h1>
             </div>
             </header>
             <Search />
